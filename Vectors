@@ -10,6 +10,7 @@ vector<int> SetVector(int &VectorSize){
     vector<int>temp;
     for(int i=0;i<VectorSize;i++){
         int value;
+        cout<<"Enter a value to add to the array."<<endl;
         cin>>value;
         temp.push_back(value);
     }
@@ -19,6 +20,7 @@ vector<int> SetVector(int &VectorSize){
 void CreateVectors(int& numberOfVectors, vector<vector<int>>& v){
     for(int a=0; a<numberOfVectors;a++){
         int VectorSize;
+        cout<<"How many numbers should this new array hold?"<<endl;
         cin>>VectorSize;
         v.push_back(SetVector(VectorSize));
     }  
@@ -27,6 +29,7 @@ void CreateVectors(int& numberOfVectors, vector<vector<int>>& v){
 void PrintVectors(int &numberOfQueries, vector<vector<int>>& v){
     for(int a=0; a<numberOfQueries; a++){
         int i,j;
+        cout<< "Enter the index on the array you want to query and then enter the index of the array you want to print out. Example: Since you have an array of arrays, 0 and 1 will return the array at postion 0. Within the array at position 0 it will return the value at index 1."<<endl;
         cin>>i>>j;
         cout<< v[i][j] << endl;
     }
@@ -35,7 +38,10 @@ void PrintVectors(int &numberOfQueries, vector<vector<int>>& v){
 
 int main() {
     int n, q; 
-    cin>>n>>q;
+    cout<< "How many arrays do you want to make?"<<endl;
+    cin>>n;
+    cout<< "How many times do you want to query the arrays?"<<endl;
+    cin>>q;
     vector<vector<int>>v;
     CreateVectors(n, v);
     PrintVectors(q, v);
