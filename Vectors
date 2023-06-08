@@ -29,7 +29,7 @@ void CreateVectors(int& numberOfVectors, vector<vector<int>>& v){
 void PrintVectors(int &numberOfQueries, vector<vector<int>>& v){
     for(int a=0; a<numberOfQueries; a++){
         int i,j;
-        cout<< "Enter the index on the array you want to query and then enter the index of the array you want to print out. Example: Since you have an array of arrays, 0 and 1 will return the array at postion 0. Within the array at position 0 it will return the value at index 1."<<endl;
+        cout<< "Enter the index of the array you want to query and then enter the index of the array you want to print out. Example: Since you have an array of arrays, 0 and 1 will return the array at postion 0. Within the array at position 0 it will return the value at index 1."<<endl;
         cin>>i>>j;
         cout<< v[i][j] << endl;
     }
