@@ -1,0 +1,44 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+vector<int> SetVector(int &VectorSize){
+    vector<int>temp;
+    for(int i=0;i<VectorSize;i++){
+        int value;
+        cin>>value;
+        temp.push_back(value);
+    }
+    return temp;
+}
+
+void CreateVectors(int& numberOfVectors, vector<vector<int>>& v){
+    for(int a=0; a<numberOfVectors;a++){
+        int VectorSize;
+        cin>>VectorSize;
+        v.push_back(SetVector(VectorSize));
+    }  
+}
+
+void PrintVectors(int &numberOfQueries, vector<vector<int>>& v){
+    for(int a=0; a<numberOfQueries; a++){
+        int i,j;
+        cin>>i>>j;
+        cout<< v[i][j] << endl;
+    }
+}
+
+
+int main() {
+    int n, q; 
+    cin>>n>>q;
+    vector<vector<int>>v;
+    CreateVectors(n, v);
+    PrintVectors(q, v);
+       
+    return 0;
+}
